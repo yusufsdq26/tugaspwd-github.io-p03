@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 5 Teman</title>
+
+</head>
+<body>
+    <style>
+        body {
+    font-family: "Rockwell", "Arial Narrow", Arial, sans-serif;
+    background-image: url('john.jpg');
+    background-size: cover;
+    background-attachment: fixed; 
+    color: lightgreen;
+    text-shadow: white;
+}
+
+h1{
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+h1:hover{
+    color: yellow;
+    letter-spacing: 4px;
+}
+
+img{
+    width: 4cm;
+    border-top: 70%;
+    box-shadow: 2px 2px 4px gray;
+    padding: 5px;
+    background: white;
+    margin: 15px;
+    transition: 0.2s;
+    opacity: 93%;
+    width: 6cm;
+    height: 6cm;
+    object-fit: cover;
+}
+
+img:hover{
+    transform: scale(1.2);
+    opacity: 100%;
+    box-shadow: 1px 1px 6px red;
+}
+
+table{
+    border-collapse: collapse;
+    width: 90%;
+}
+.thead{
+    background-color: #45a049;
+    
+}
+th{
+    color: white;
+}
+
+td, th{
+    border: 1px solid white;
+    padding: 8px;
+
+
+}
+
+td:first-child{
+    text-align: center;
+
+
+}
+
+.judul{
+    text-align: center;
+    font-size: 30px;
+    color: white;
+}
+
+.judul-tabel{
+    background-color: seagreen;
+    color: navajowhite;
+}
+
+.top1{
+    text-align: center;
+    color: lightgreen;
+}
+
+.tombol{
+    background-color: #ff00fc;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    text-decoration: none;
+}
+
+.tombol:hover{
+    background-color: #45a049;
+}
+
+a{
+    color: orangered;
+    text-decoration: none;
+}
+td{
+    color: white;
+}
+
+td:hover{
+    background-color: #e84dff;
+}
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <h2 class="judul">The Top 5 of My Best Friend</h2>
+    <table class="tabel1">
+        <tbody><tr class="thead">
+          <th>No</th>
+          <th>Nama Kawan</th>
+          <th>Alamat</th>
+          <th>Aksi</th>
+        </tr>
+        <tr id="row__1">
+          <td>1</td>
+          <td class="nama">Andre Pramudita</td>
+          <td class="alamat">Cirebon</td>
+          <td class="hapus" id="hapus__1">Hapus</td>
+        </tr>
+        <tr id="row__2">
+          <td>2</td>
+          <td class="nama">Suci Fidianti</td>
+          <td class="alamat">Cirebon</td>
+          <td class="hapus" id="hapus__2">Hapus</td>
+        </tr>
+        <tr id="row__3">
+          <td>3</td>
+          <td class="nama">Ibnu syna</td>
+          <td class="alamat">Majalengka</td>
+          <td class="hapus" id="hapus__3">Hapus</td>
+        </tr>
+        <tr id="row__4">
+          <td>4</td>
+          <td class="nama">Nurul Muna</td>
+          <td class="alamat">Cirebon</td>
+          <td class="hapus " id="hapus__4">Hapus</td>
+        </tr>
+        <tr id="row__5">
+          <td>5</td>
+          <td class="nama">Rijal Wijaya</td>
+          <td class="alamat">Cirebon</td>
+          <td class="hapus" id="hapus__5">Hapus</td>
+        </tr>
+      </tbody></table><br><br>
+
+    <div class="top1">
+        <a onclick="alert('Selamat Tinggal')" href="index.html" class="tombol">Kembali</a>
+    </div>
+    <script>
+        $(document).ready(function(){
+
+          $('.nama').click(function(){
+
+            let isi = $(this).text();
+
+            let isi2 = prompt('Apakah anda ingin mengubahnya?:',isi);
+            if(!isi2) return;
+
+      
+            $(this).text(isi2);
+          })
+      
+          $('.alamat').click(function(){
+
+           let isi = $(this).text();
+
+           let isi2 = prompt('Apakah anda ingin mengubahnya?:',isi);
+           if(!isi2) return;
+
+      
+           $(this).text(isi2);
+          })
+      
+      
+          $('.hapus').click(function(){
+
+           let betul = confirm('Anda yakin ingin menghapusnya?');
+           if(!betul) return;
+      
+           let id = $(this).prop('id');
+
+      
+      
+           let rid = id.split('__');
+           let baris_ke = rid[1];
+      
+
+      
+           $('#row__'+baris_ke).slideUp()
+      
+      
+      
+
+      
+      
+          })
+      
+        })
+      </script>
+</body>
+</html>
